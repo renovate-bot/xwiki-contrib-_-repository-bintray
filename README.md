@@ -1,0 +1,18 @@
+# Bintray Extensions Support
+Extension extending Extension Module with possibility to import extension from Bintray repositories.
+
+* Project Lead: [Krzysztof Płachno](http://www.xwiki.org/xwiki/bin/view/XWiki/cristof_p)
+* Project Mentor: [Thomas Mortagne](http://www.xwiki.org/xwiki/bin/view/XWiki/ThomasMortagne)
+* [Design page](http://design.xwiki.org/xwiki/bin/view/Proposal/Moreextensionrepositories)
+* Issue Tracker: ¯\\\_(ツ)_/¯
+* Communication: [Mailing List](http://dev.xwiki.org/xwiki/bin/view/Community/MailingLists), [IRC]( http://dev.xwiki.org/xwiki/bin/view/Community/IRC)
+* [Development Practices](http://dev.xwiki.org)
+* Minimal XWiki version supported: ¯\\\_(ツ)_/¯
+* License: LGPL 2.1+
+* Sonar Dashboard: N/A
+* Continuous Integration Status: ¯\\\_(ツ)_/¯
+
+
+## Building
+
+You need Maven 3.1+ in order to build this extension.

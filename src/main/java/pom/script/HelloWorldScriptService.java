@@ -29,7 +29,8 @@ import javax.inject.Named;
 import javax.inject.Singleton;
 
 /**
- * Make the HelloWorld API available to scripting.
+ *
+ * @version $Id: $
  */
 @Component
 @Named("hello")
@@ -39,6 +40,10 @@ public class HelloWorldScriptService implements ScriptService
     @Inject
     private HelloWorld helloWorld;
 
+    /**
+     *
+     * @return greeting
+     */
     public String greet()
     {
         return this.helloWorld.sayHello();

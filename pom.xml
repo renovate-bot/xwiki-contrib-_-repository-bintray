@@ -29,11 +29,35 @@
   </parent>
   <artifactId>repository-bintray</artifactId>
   <version>0.1-SNAPSHOT</version>
-  <name>XWiki Macro - Hello World Component</name>
-  <description>XWiki Macro - Hello World Component</description>
+  <name>Bintray Extensions Support</name>
+  <description>
+    Extension extending Extension Module with possibility to import extension from Bintray repositories.
+  </description>
+  <scm>
+    <connection>scm:git:git://github.com/xwiki-contrib/repository-bintray.git</connection>
+    <developerConnection>scm:git:git@github.com:xwiki-contrib/repository-bintray.git</developerConnection>
+    <url>https://github.com/xwiki-contrib/repository-bintray</url>
+  </scm>
+  <developers>
+    <developer>
+      <id>cristof_p</id>
+      <name>Krzysztof Płachno</name>
+    </developer>
+    <developer>
+      <id>tMortagne</id>
+      <name>Thomas Mortagne</name>
+    </developer>
+  </developers>
   <properties>
-    <commons.version>5.4.4</commons.version>
+    <commons.version>6.2.5</commons.version>
+
+    <xwiki.revapi.skip>true</xwiki.revapi.skip>
+    <xwiki.extension.name>Bintray Extensions Support</xwiki.extension.name>
+    <xwiki.extension.category>application</xwiki.extension.category>
+    <!--todo <xwiki.issueManagement.jira.id></xwiki.issueManagement.jira.id>-->
   </properties>
+
+
   <build>
     <plugins>
       <plugin>
@@ -41,8 +65,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>2.3.2</version>
         <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
       </plugin>
     </plugins>

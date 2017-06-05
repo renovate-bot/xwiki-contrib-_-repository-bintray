@@ -22,7 +22,9 @@ package pom;
 import org.xwiki.component.annotation.Role;
 
 /**
- * Interface (aka Role) of the Component
+ * Interface (aka Role) of the Component.
+ *
+ * @version $Id: 9fc06a4b258d638e0a20288b222eff9117d585f2 $
  */
 @Role
 public interface HelloWorld

@@ -24,11 +24,11 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.xwiki.contrib</groupId>
-    <artifactId>parent-platform</artifactId>
-    <version>6.2.5</version>
+    <artifactId>parent-commons</artifactId>
+    <version>8.4-7</version>
   </parent>
   <artifactId>repository-bintray</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.1</version>
   <name>Bintray Extensions Support</name>
   <description>
     Extension extending Extension Module with possibility to import extension from Bintray repositories.
@@ -49,7 +49,6 @@
     </developer>
   </developers>
   <properties>
-    <commons.version>9.4</commons.version>
 
     <xwiki.revapi.skip>true</xwiki.revapi.skip>
     <xwiki.extension.name>Bintray Extensions Support</xwiki.extension.name>
@@ -76,11 +75,6 @@
     <dependency>
       <groupId>org.xwiki.commons</groupId>
       <artifactId>xwiki-commons-component-api</artifactId>
-      <version>${commons.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.xwiki.commons</groupId>
-      <artifactId>xwiki-commons-core</artifactId>
       <version>${commons.version}</version>
     </dependency>
     <dependency>

@@ -20,6 +20,9 @@
 package org.xwiki.contrib.repository.bintray;
 
 import org.codehaus.plexus.PlexusContainer;
+import org.codehaus.plexus.personality.plexus.lifecycle.phase.Initializable;
+import org.codehaus.plexus.personality.plexus.lifecycle.phase.InitializationException;
+import org.slf4j.Logger;
 import org.xwiki.component.annotation.Component;
 
 import javax.inject.Inject;
@@ -43,7 +46,7 @@ import org.xwiki.extension.repository.aether.internal.AetherExtensionRepositoryF
 @Component
 @Singleton
 @Named("bintray-maven")
-public class BintrayMavenExtensionRepositoryFactory extends AbstractExtensionRepositoryFactory
+public class BintrayMavenExtensionRepositoryFactory extends AbstractExtensionRepositoryFactory implements Initializable
 {
     @Inject
     private ComponentManager componentManager;
@@ -53,6 +56,16 @@ public class BintrayMavenExtensionRepositoryFactory extends AbstractExtensionRep
 
     @Inject
     private Provider<PlexusContainer> plexusProvider;
+
+    @Inject
+    private Logger logger;
+
+
+    @Override public void initialize() throws InitializationException
+    {
+        this.logger.info("Bintray Maven Extension Repository Factory initialized successfully");
+    }
+
 
     @Override
     public ExtensionRepository createRepository(ExtensionRepositoryDescriptor extensionRepositoryDescriptor)

@@ -36,6 +36,7 @@ import org.xwiki.extension.repository.DefaultExtensionRepositoryDescriptor;
 import org.xwiki.extension.repository.ExtensionRepository;
 import org.xwiki.extension.repository.ExtensionRepositoryDescriptor;
 import org.xwiki.extension.repository.ExtensionRepositoryException;
+import org.xwiki.extension.repository.ExtensionRepositoryFactory;
 import org.xwiki.extension.repository.aether.internal.AetherExtensionRepository;
 import org.xwiki.extension.repository.aether.internal.AetherExtensionRepositoryFactory;
 
@@ -49,23 +50,16 @@ import org.xwiki.extension.repository.aether.internal.AetherExtensionRepositoryF
 public class BintrayMavenExtensionRepositoryFactory extends AbstractExtensionRepositoryFactory implements Initializable
 {
     @Inject
-    private ComponentManager componentManager;
-
-    @Inject
-    private AetherExtensionRepositoryFactory aetherExtensionRepositoryFactory;
-
-    @Inject
-    private Provider<PlexusContainer> plexusProvider;
+    @Named("maven")
+    private ExtensionRepositoryFactory mavenExtensionRepositoryFactory;
 
     @Inject
     private Logger logger;
-
 
     @Override public void initialize() throws InitializationException
     {
         this.logger.info("Bintray Maven Extension Repository Factory initialized successfully");
     }
-
 
     @Override
     public ExtensionRepository createRepository(ExtensionRepositoryDescriptor extensionRepositoryDescriptor)
@@ -75,9 +69,7 @@ public class BintrayMavenExtensionRepositoryFactory extends AbstractExtensionRep
             ExtensionRepositoryDescriptor mavenRepositoryDescriptor =
                     obtainMavenRepositoryDescriptor(extensionRepositoryDescriptor);
             ExtensionRepository aetherExtensionRepository =
-                    new AetherExtensionRepository(mavenRepositoryDescriptor, aetherExtensionRepositoryFactory,
-                            this.plexusProvider.get(),
-                            this.componentManager);
+                    mavenExtensionRepositoryFactory.createRepository(mavenRepositoryDescriptor);
             return new BintrayMavenExtensionRepository(extensionRepositoryDescriptor, aetherExtensionRepository);
         } catch (Exception e) {
             throw new ExtensionRepositoryException(

@@ -28,7 +28,7 @@
     <version>8.4-7</version>
   </parent>
   <artifactId>repository-bintray</artifactId>
-  <version>0.2-SNAPSHOT</version>
+  <version>1.0-SNAPSHOT</version>
   <name>Bintray Extensions Support</name>
   <description>
     Extension extending Extension Module with possibility to import extension from Bintray repositories.

@@ -50,26 +50,10 @@
   </developers>
   <properties>
 
-    <xwiki.revapi.skip>true</xwiki.revapi.skip>
     <xwiki.extension.name>Bintray Extensions Support</xwiki.extension.name>
-    <xwiki.extension.category>application</xwiki.extension.category>
-    <!--todo <xwiki.issueManagement.jira.id></xwiki.issueManagement.jira.id>-->
+    <xwiki.extension.category>repository</xwiki.extension.category>
+    <xwiki.issueManagement.jira.id>BINTRAYREP</xwiki.issueManagement.jira.id>
   </properties>
-
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.2</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 
   <dependencies>
     <dependency>
@@ -99,17 +83,12 @@
       <artifactId>xwiki-commons-script</artifactId>
       <version>${commons.version}</version>
     </dependency>
+
     <!-- Testing dependencies -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-all</artifactId>
-      <version>1.10.19</version>
+      <groupId>org.xwiki.commons</groupId>
+      <artifactId>xwiki-commons-test-component</artifactId>
+      <version>6.4.8</version>
       <scope>test</scope>
     </dependency>
 

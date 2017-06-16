@@ -20,8 +20,7 @@
 package org.xwiki.contrib.repository.bintray;
 
 import org.codehaus.plexus.PlexusContainer;
-import org.codehaus.plexus.personality.plexus.lifecycle.phase.Initializable;
-import org.codehaus.plexus.personality.plexus.lifecycle.phase.InitializationException;
+import org.xwiki.component.phase.Initializable;
 import org.slf4j.Logger;
 import org.xwiki.component.annotation.Component;
 
@@ -56,7 +55,7 @@ public class BintrayMavenExtensionRepositoryFactory extends AbstractExtensionRep
     @Inject
     private Logger logger;
 
-    @Override public void initialize() throws InitializationException
+    @Override public void initialize()
     {
         this.logger.info("Bintray Maven Extension Repository Factory initialized successfully");
     }

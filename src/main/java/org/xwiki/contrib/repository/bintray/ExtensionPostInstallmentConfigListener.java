@@ -35,7 +35,7 @@ import org.xwiki.extension.repository.ExtensionRepository;
 import org.xwiki.extension.repository.ExtensionRepositoryException;
 import org.xwiki.extension.repository.ExtensionRepositoryFactory;
 import org.xwiki.extension.repository.ExtensionRepositoryManager;
-import org.xwiki.observation.EventListener;
+import org.xwiki.observation.AbstractEventListener;
 import org.xwiki.observation.event.Event;
 
 import static org.xwiki.contrib.repository.bintray.model.BintrayRepositoryType.MAVEN;
@@ -50,7 +50,7 @@ import static org.xwiki.contrib.repository.bintray.model.BintrayRepositoryType.M
 @Component
 @Named("BintrayRepositoryExtensionPostInstallmentConfigListener")
 @Singleton
-public class ExtensionPostInstallmentConfigListener implements EventListener, Initializable
+public class ExtensionPostInstallmentConfigListener extends AbstractEventListener implements Initializable
 {
     @Inject
     private Logger logger;
@@ -64,6 +64,14 @@ public class ExtensionPostInstallmentConfigListener implements EventListener, In
     @Inject
     @Named("bintray-maven")
     private ExtensionRepositoryFactory bintrayMavenExtensionRepositoryFactory;
+
+    /**
+     *
+     */
+    public ExtensionPostInstallmentConfigListener()
+    {
+        super("BintrayRepositoryExtensionPostInstallmentConfigListener", Collections.emptyList());
+    }
 
     @Override
     public void initialize()
@@ -101,18 +109,6 @@ public class ExtensionPostInstallmentConfigListener implements EventListener, In
                         "Bintray repository of type: " + bintrayRepositoryDescriptor.getRepositoryType()
                                 + " not yet fully implemented.");
         }
-    }
-
-    @Override
-    public String getName()
-    {
-        return "BintrayRepositoryExtensionPostInstallmentConfigListener";
-    }
-
-    @Override
-    public List<Event> getEvents()
-    {
-        return Collections.emptyList();
     }
 
     @Override

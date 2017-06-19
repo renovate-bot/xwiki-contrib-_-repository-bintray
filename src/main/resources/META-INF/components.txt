@@ -1,2 +1,3 @@
 org.xwiki.contrib.repository.bintray.BintrayMavenExtensionRepositoryFactory
 org.xwiki.contrib.repository.bintray.ExtensionPostInstallmentConfigListener
+org.xwiki.contrib.repository.bintray.DefaultBintrayRepositoryConfiguration

@@ -19,25 +19,20 @@
  */
 package org.xwiki.contrib.repository.bintray;
 
-import org.codehaus.plexus.PlexusContainer;
 import org.xwiki.component.phase.Initializable;
 import org.slf4j.Logger;
 import org.xwiki.component.annotation.Component;
 
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.inject.Provider;
 import javax.inject.Singleton;
 
-import org.xwiki.component.manager.ComponentManager;
 import org.xwiki.extension.repository.AbstractExtensionRepositoryFactory;
 import org.xwiki.extension.repository.DefaultExtensionRepositoryDescriptor;
 import org.xwiki.extension.repository.ExtensionRepository;
 import org.xwiki.extension.repository.ExtensionRepositoryDescriptor;
 import org.xwiki.extension.repository.ExtensionRepositoryException;
 import org.xwiki.extension.repository.ExtensionRepositoryFactory;
-import org.xwiki.extension.repository.aether.internal.AetherExtensionRepository;
-import org.xwiki.extension.repository.aether.internal.AetherExtensionRepositoryFactory;
 
 /**
  * @version $Id: 81a55f3a16b33bcf2696d0cac493b25c946b6ee4 $

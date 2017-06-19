@@ -19,6 +19,7 @@
  */
 package org.xwiki.contrib.repository.bintray;
 
+import java.net.URISyntaxException;
 import java.util.Collections;
 import java.util.List;
 
@@ -29,8 +30,15 @@ import javax.inject.Singleton;
 import org.slf4j.Logger;
 import org.xwiki.component.phase.Initializable;
 import org.xwiki.component.annotation.Component;
+import org.xwiki.contrib.repository.bintray.model.BintrayRepositoryDescriptor;
+import org.xwiki.extension.repository.ExtensionRepository;
+import org.xwiki.extension.repository.ExtensionRepositoryException;
+import org.xwiki.extension.repository.ExtensionRepositoryFactory;
+import org.xwiki.extension.repository.ExtensionRepositoryManager;
 import org.xwiki.observation.EventListener;
 import org.xwiki.observation.event.Event;
+
+import static org.xwiki.contrib.repository.bintray.model.BintrayRepositoryType.MAVEN;
 
 /**
  * This listener is only for execution configuration logic on installment.
@@ -47,22 +55,68 @@ public class ExtensionPostInstallmentConfigListener implements EventListener, In
     @Inject
     private Logger logger;
 
-    @Override public void initialize()
+    @Inject
+    private BintrayRepositoryConfiguration bintrayRepositoryConfiguration;
+
+    @Inject
+    private ExtensionRepositoryManager extensionRepositoryManager;
+
+    @Inject
+    @Named("bintray-maven")
+    private ExtensionRepositoryFactory bintrayMavenExtensionRepositoryFactory;
+
+    @Override
+    public void initialize()
     {
         logger.info(getName() + " registered");
+        addBintrayRepositories();
     }
 
-    @Override public String getName()
+    private void addBintrayRepositories()
+    {
+        bintrayRepositoryConfiguration.getBintrayRepositoriesDescriptors().stream().forEach(
+                bintrayRepositoryDescriptor -> {
+                    try {
+                        ExtensionRepository extensionRepository =
+                                createExtensionRepository(bintrayRepositoryDescriptor);
+                        extensionRepositoryManager.addRepository(extensionRepository);
+                        this.logger.info("Repository of id: '" + bintrayRepositoryDescriptor.getId()
+                                + "' registered successfully");
+                    } catch (ExtensionRepositoryException | URISyntaxException e) {
+                        this.logger.error("Failed to add bintray repository [" + bintrayRepositoryDescriptor + "]", e);
+                    }
+                }
+        );
+    }
+
+    private ExtensionRepository createExtensionRepository(BintrayRepositoryDescriptor bintrayRepositoryDescriptor)
+            throws URISyntaxException, ExtensionRepositoryException
+    {
+        switch (bintrayRepositoryDescriptor.getRepositoryType()) {
+            case MAVEN:
+                return bintrayMavenExtensionRepositoryFactory.createRepository(
+                        bintrayRepositoryDescriptor.toExtensionRepositoryDescriptor());
+            default:
+                throw new RuntimeException(
+                        "Bintray repository of type: " + bintrayRepositoryDescriptor.getRepositoryType()
+                                + " not yet fully implemented.");
+        }
+    }
+
+    @Override
+    public String getName()
     {
         return "BintrayRepositoryExtensionPostInstallmentConfigListener";
     }
 
-    @Override public List<Event> getEvents()
+    @Override
+    public List<Event> getEvents()
     {
         return Collections.emptyList();
     }
 
-    @Override public void onEvent(Event event, Object o, Object o1)
+    @Override
+    public void onEvent(Event event, Object o, Object o1)
     {
     }
 }

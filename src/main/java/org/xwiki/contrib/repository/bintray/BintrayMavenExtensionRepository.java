@@ -53,6 +53,7 @@ public class BintrayMavenExtensionRepository extends AbstractExtensionRepository
     public BintrayMavenExtensionRepository(ExtensionRepositoryDescriptor extensionRepositoryDescriptor,
             ExtensionRepository aetherExtensionRepository)
     {
+        super(extensionRepositoryDescriptor);
         this.aetherExtensionRepository = aetherExtensionRepository;
         populateSubjectRepoFields(extensionRepositoryDescriptor.getURI());
 

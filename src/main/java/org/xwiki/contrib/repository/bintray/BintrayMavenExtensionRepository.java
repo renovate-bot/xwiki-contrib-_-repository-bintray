@@ -31,6 +31,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.slf4j.Logger;
 import org.xwiki.contrib.repository.bintray.dto.BintrayPackageDTO;
 import org.xwiki.contrib.repository.bintray.dto.BintrayPackages;
 import org.xwiki.contrib.repository.bintray.model.BintrayExtension;
@@ -69,6 +70,8 @@ public class BintrayMavenExtensionRepository extends AbstractExtensionRepository
 
     private final HttpClientFactory httpClientFactory;
 
+    private final Logger logger;
+
     private final HttpClientContext localContext;
 
     private String subject;
@@ -81,17 +84,19 @@ public class BintrayMavenExtensionRepository extends AbstractExtensionRepository
      * @param licenseManager -
      * @param extensionFactory -
      * @param httpClientFactory -
+     * @param logger -
      */
     public BintrayMavenExtensionRepository(ExtensionRepositoryDescriptor extensionRepositoryDescriptor,
             AetherExtensionRepository aetherExtensionRepository,
             ExtensionLicenseManager licenseManager, ExtensionFactory extensionFactory,
-            HttpClientFactory httpClientFactory)
+            HttpClientFactory httpClientFactory, Logger logger)
     {
         super(extensionRepositoryDescriptor);
         this.aetherExtensionRepository = aetherExtensionRepository;
         this.licenseManager = licenseManager;
         this.extensionFactory = extensionFactory;
         this.httpClientFactory = httpClientFactory;
+        this.logger = logger;
         this.localContext = HttpClientContext.create();
 
         populateSubjectRepoFields(extensionRepositoryDescriptor.getURI());
@@ -173,21 +178,20 @@ public class BintrayMavenExtensionRepository extends AbstractExtensionRepository
 
         bintrayPackages.limitContent(limit);
 
-        return getItarableResultFrom(bintrayPackages, totalHits, offset);
+        return getItarableResultFrom(bintrayPackages, totalHits, offset, logger);
     }
 
     private CollectionIterableResult<Extension> getItarableResultFrom(BintrayPackages bintrayPackages, int totalHits,
-            int offset) throws SearchException
+            int offset, Logger logger) throws SearchException
     {
         ArrayList<Extension> extensions = new ArrayList<>(bintrayPackages.getBintrayPackageDTOs().size());
         for (BintrayPackageDTO bintrayPackageDTO : bintrayPackages.getBintrayPackageDTOs()) {
             try {
                 extensions.add(new BintrayExtension(bintrayPackageDTO, this, aetherExtensionRepository, licenseManager,
                         extensionFactory));
-            } catch (ResolveException e) {
-                throw new SearchException(
-                        String.format("Problem with resolving extension: [%s]",
-                                bintrayPackageDTO.getSystem_ids().get(0)), e);
+            } catch (Exception e) {
+                logger.warn("Problem with resolving extension: [{}] - [{}]", bintrayPackageDTO.getName(),
+                        e.getMessage());
             }
         }
         return new CollectionIterableResult<Extension>(totalHits, offset, extensions);

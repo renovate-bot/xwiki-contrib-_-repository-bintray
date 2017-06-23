@@ -78,7 +78,7 @@ public class BintrayMavenExtensionRepositoryFactory extends AbstractExtensionRep
                     mavenExtensionRepositoryFactory.createRepository(mavenRepositoryDescriptor);
             return new BintrayMavenExtensionRepository(extensionRepositoryDescriptor,
                     (AetherExtensionRepository) aetherExtensionRepository, licenseManager, extensionFactory,
-                    httpClientFactory);
+                    httpClientFactory, logger);
         } catch (Exception e) {
             throw new ExtensionRepositoryException(
                     "Failed to create repository [" + extensionRepositoryDescriptor + "]", e);

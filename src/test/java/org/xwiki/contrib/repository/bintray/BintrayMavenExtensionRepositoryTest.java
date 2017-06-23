@@ -32,7 +32,7 @@ public class BintrayMavenExtensionRepositoryTest
 
             //when
             BintrayMavenExtensionRepository bintrayMavenExtensionRepository =
-                    new BintrayMavenExtensionRepository(extensionRepositoryDescriptor, null, null, null, null);
+                    new BintrayMavenExtensionRepository(extensionRepositoryDescriptor, null, null, null, null, null);
 
             //then
             assertEquals("bintray", bintrayMavenExtensionRepository.getSubject());

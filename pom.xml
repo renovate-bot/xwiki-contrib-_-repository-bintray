@@ -29,7 +29,7 @@
   </parent>
   <artifactId>repository-bintray</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>Bintray Extensions Support</name>
+  <name>Extension Repository Connector - Bintray</name>
   <description>
     Extension extending Extension Module with possibility to import extension from Bintray repositories.
   </description>
@@ -49,7 +49,7 @@
     </developer>
   </developers>
   <properties>
-    <xwiki.extension.name>Bintray Extensions Support</xwiki.extension.name>
+    <xwiki.extension.name>Extension Repository Connector - Bintray</xwiki.extension.name>
     <xwiki.extension.category>repository</xwiki.extension.category>
     <xwiki.issueManagement.jira.id>BINTRAYREP</xwiki.issueManagement.jira.id>
     <xwiki.release.jira.skip>false</xwiki.release.jira.skip>

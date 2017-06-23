@@ -19,20 +19,24 @@
  */
 package org.xwiki.contrib.repository.bintray;
 
-import org.xwiki.component.phase.Initializable;
-import org.slf4j.Logger;
-import org.xwiki.component.annotation.Component;
-
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.slf4j.Logger;
+import org.xwiki.component.annotation.Component;
+import org.xwiki.component.phase.Initializable;
+import org.xwiki.extension.ExtensionLicenseManager;
+import org.xwiki.extension.internal.ExtensionFactory;
 import org.xwiki.extension.repository.AbstractExtensionRepositoryFactory;
 import org.xwiki.extension.repository.DefaultExtensionRepositoryDescriptor;
 import org.xwiki.extension.repository.ExtensionRepository;
 import org.xwiki.extension.repository.ExtensionRepositoryDescriptor;
 import org.xwiki.extension.repository.ExtensionRepositoryException;
 import org.xwiki.extension.repository.ExtensionRepositoryFactory;
+import org.xwiki.extension.repository.aether.internal.AetherExtensionRepository;
+import org.xwiki.extension.repository.http.internal.HttpClientFactory;
 
 /**
  * @version $Id: 81a55f3a16b33bcf2696d0cac493b25c946b6ee4 $
@@ -50,9 +54,18 @@ public class BintrayMavenExtensionRepositoryFactory extends AbstractExtensionRep
     @Inject
     private Logger logger;
 
+    @Inject
+    private ExtensionLicenseManager licenseManager;
+
+    @Inject
+    private HttpClientFactory httpClientFactory;
+
+    @Inject
+    private ExtensionFactory factory;
+
     @Override public void initialize()
     {
-        this.logger.info("Bintray Maven Extension Repository Factory initialized successfully");
+        this.logger.info("Bintray Maven Extension Repository Factory initialized.");
     }
 
     @Override
@@ -64,7 +77,10 @@ public class BintrayMavenExtensionRepositoryFactory extends AbstractExtensionRep
                     obtainMavenRepositoryDescriptor(extensionRepositoryDescriptor);
             ExtensionRepository aetherExtensionRepository =
                     mavenExtensionRepositoryFactory.createRepository(mavenRepositoryDescriptor);
-            return new BintrayMavenExtensionRepository(extensionRepositoryDescriptor, aetherExtensionRepository);
+            CloseableHttpClient client = httpClientFactory.createClient(null, null);
+            return new BintrayMavenExtensionRepository(extensionRepositoryDescriptor,
+                    (AetherExtensionRepository) aetherExtensionRepository,
+                    client, licenseManager, factory);
         } catch (Exception e) {
             throw new ExtensionRepositoryException(
                     "Failed to create repository [" + extensionRepositoryDescriptor + "]", e);

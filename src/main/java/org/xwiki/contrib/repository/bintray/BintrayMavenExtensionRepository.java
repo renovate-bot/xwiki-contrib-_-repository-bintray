@@ -19,60 +19,93 @@
  */
 package org.xwiki.contrib.repository.bintray;
 
+import java.io.IOException;
 import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
 
+import org.apache.commons.io.IOUtils;
+import org.apache.http.HttpStatus;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.xwiki.contrib.repository.bintray.dto.BintrayPackageDTO;
+import org.xwiki.contrib.repository.bintray.dto.BintrayPackages;
+import org.xwiki.contrib.repository.bintray.model.BintrayExtension;
 import org.xwiki.extension.Extension;
 import org.xwiki.extension.ExtensionDependency;
 import org.xwiki.extension.ExtensionId;
+import org.xwiki.extension.ExtensionLicenseManager;
 import org.xwiki.extension.ResolveException;
+import org.xwiki.extension.internal.ExtensionFactory;
 import org.xwiki.extension.repository.AbstractExtensionRepository;
-import org.xwiki.extension.repository.ExtensionRepository;
 import org.xwiki.extension.repository.ExtensionRepositoryDescriptor;
+import org.xwiki.extension.repository.aether.internal.AetherExtensionRepository;
+import org.xwiki.extension.repository.result.CollectionIterableResult;
 import org.xwiki.extension.repository.result.IterableResult;
+import org.xwiki.extension.repository.search.SearchException;
+import org.xwiki.extension.repository.search.Searchable;
 import org.xwiki.extension.version.Version;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * @version $Id: 81a55f3a16b33bcf2696d0cac493b25c946b6ee4 $
  * @since 0.2
  */
-public class BintrayMavenExtensionRepository extends AbstractExtensionRepository
+public class BintrayMavenExtensionRepository extends AbstractExtensionRepository implements Searchable
 {
+    private static ObjectMapper objectMapper = new ObjectMapper();
 
-    final private String BINTRAY_API_URL = "http://api.bintray.com/";
+    private final AetherExtensionRepository aetherExtensionRepository;
 
-    private final ExtensionRepository aetherExtensionRepository;
+    private final CloseableHttpClient httpClient;
+
+    private final ExtensionLicenseManager licenseManager;
+
+    private final ExtensionFactory extensionFactory;
+
+    private final HttpClientContext localContext;
 
     private String subject;
-    private String repo;
 
+    private String repo;
 
     /**
      * @param extensionRepositoryDescriptor -
      * @param aetherExtensionRepository - previously created aetherExtensionRepository
+     * @param httpClient -
+     * @param licenseManager -
+     * @param extensionFactory -
      */
     public BintrayMavenExtensionRepository(ExtensionRepositoryDescriptor extensionRepositoryDescriptor,
-            ExtensionRepository aetherExtensionRepository)
+            AetherExtensionRepository aetherExtensionRepository, CloseableHttpClient httpClient,
+            ExtensionLicenseManager licenseManager, ExtensionFactory extensionFactory)
     {
         super(extensionRepositoryDescriptor);
         this.aetherExtensionRepository = aetherExtensionRepository;
-        populateSubjectRepoFields(extensionRepositoryDescriptor.getURI());
+        this.httpClient = httpClient;
+        this.licenseManager = licenseManager;
+        this.extensionFactory = extensionFactory;
+        this.localContext = HttpClientContext.create();
 
+        populateSubjectRepoFields(extensionRepositoryDescriptor.getURI());
     }
 
     private void populateSubjectRepoFields(URI uri)
     {
-        String [] pathElements = uri.getPath().split("/");
+        String[] pathElements = uri.getPath().split("/");
         subject = pathElements[1];
         repo = pathElements[2];
     }
-
 
     @Override
     public Extension resolve(ExtensionId extensionId) throws ResolveException
     {
         return aetherExtensionRepository.resolve(extensionId);
     }
-
 
     @Override
     public Extension resolve(ExtensionDependency extensionDependency) throws ResolveException
@@ -84,6 +117,75 @@ public class BintrayMavenExtensionRepository extends AbstractExtensionRepository
     public IterableResult<Version> resolveVersions(String s, int i, int i1) throws ResolveException
     {
         return aetherExtensionRepository.resolveVersions(s, i, i1);
+    }
+
+    @Override public IterableResult<Extension> search(String pattern, int offset, int limit) throws SearchException
+    {
+        String url = null;
+        try {
+            URIBuilder uriBuilder = new URIBuilder(BintrayParameters.BINTRAY_PACKAGE_SEARCH_URL);
+            uriBuilder.addParameter(BintrayParameters.BINTRAY_API_SUBJECT_PARAM, subject);
+            uriBuilder.addParameter(BintrayParameters.BINTRAY_API_REPO_PARAM, repo);
+            uriBuilder.addParameter(BintrayParameters.BINTRAY_API_PACKAGE_SEARCH_NAME_PARAM, pattern);
+            uriBuilder.addParameter(BintrayParameters.BINTRAY_API_PAGINATION_START_POS_PARAM, "" + offset);
+
+            url = uriBuilder.build().toString();
+        } catch (URISyntaxException e) {
+            throw new SearchException("Failed to build REST URL", e);
+        }
+
+        HttpGet getMethod = new HttpGet(url);
+        CloseableHttpResponse response;
+        try {
+            if (this.localContext != null) {
+                response = httpClient.execute(getMethod, this.localContext);
+            } else {
+                response = httpClient.execute(getMethod);
+            }
+        } catch (Exception e) {
+            throw new SearchException(String.format("Failed to request [%s]", getMethod.getURI()), e);
+        }
+
+        if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
+            throw new SearchException(String.format("Invalid answer [%s] from the server when requesting [%s]",
+                    response.getStatusLine().getStatusCode(), getMethod.getURI()));
+        }
+
+        BintrayPackages bintrayPackages = null;
+        int totalHits = 0;
+        try {
+            String totalHitsString = response.getLastHeader("X-RangeLimit-Total").getValue();
+            totalHits = Integer.parseInt(totalHitsString);
+            BintrayPackageDTO[] bintrayPackageDTOs =
+                    objectMapper.readValue(response.getEntity().getContent(), BintrayPackageDTO[].class);
+            bintrayPackages = new BintrayPackages(bintrayPackageDTOs);
+        } catch (IOException e) {
+            throw new SearchException(
+                    String.format("Invalid response body from the bintray server when requesting: [%s]", pattern), e);
+        } finally {
+            IOUtils.closeQuietly(response);
+        }
+
+        bintrayPackages.limitContent(limit);
+
+        return getItarableResultFrom(bintrayPackages, totalHits, offset);
+    }
+
+    private CollectionIterableResult<Extension> getItarableResultFrom(BintrayPackages bintrayPackages, int totalHits,
+            int offset) throws SearchException
+    {
+        ArrayList<Extension> extensions = new ArrayList<>(bintrayPackages.getBintrayPackageDTOs().size());
+        for (BintrayPackageDTO bintrayPackageDTO : bintrayPackages.getBintrayPackageDTOs()) {
+            try {
+                extensions.add(new BintrayExtension(bintrayPackageDTO, this, aetherExtensionRepository, licenseManager,
+                        extensionFactory));
+            } catch (ResolveException e) {
+                throw new SearchException(
+                        String.format("Problem with resolving extension: [%s]",
+                                bintrayPackageDTO.getSystem_ids().get(0)), e);
+            }
+        }
+        return new CollectionIterableResult<Extension>(totalHits, offset, extensions);
     }
 
     protected String getSubject()

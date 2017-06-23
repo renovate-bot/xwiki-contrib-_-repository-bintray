@@ -1,0 +1,1741 @@
+Ó[
+  {
+    "name": "io.janusproject.guava:guava",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2014-07-08T08:28:57.447Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "19.0.0",
+      "17.0.2",
+      "17.0"
+    ],
+    "latest_version": "19.0.0",
+    "updated": "2015-06-18T15:46:56.433Z",
+    "rating_count": 0,
+    "system_ids": [
+      "io.janusproject.guava:guava"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "guava-preconditions",
+    "repo": "maven",
+    "owner": "grodin",
+    "desc": "Java preconditions checks extracted from Guava library",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2014-11-28T18:48:53.388Z",
+    "website_url": "https://github.com/grodin/guava-preconditions",
+    "issue_tracker_url": "https://github.com/grodin/guava-preconditions/issues",
+    "linked_to_repos": [
+      "jcenter"
+    ],
+    "permissions": [],
+    "versions": [
+      "18.0.1"
+    ],
+    "latest_version": "18.0.1",
+    "updated": "2015-02-13T13:36:52.753Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.omricat.guava-preconditions:guava-preconditions"
+    ],
+    "vcs_url": "https://github.com/grodin/guava-preconditions.git",
+    "maturity": "",
+    "linked_to_repo": "/bintray/jcenter"
+  },
+  {
+    "name": "guava-testlib",
+    "repo": "opensource",
+    "owner": "diffplug",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2016-01-19T02:53:17.408Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [
+      "jcenter"
+    ],
+    "permissions": [],
+    "versions": [
+      "19.0.0"
+    ],
+    "latest_version": "19.0.0",
+    "updated": "2016-06-01T04:05:26.935Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.diffplug.guava:guava-testlib"
+    ],
+    "vcs_url": "https://github.com/diffplug/durian",
+    "maturity": "",
+    "linked_to_repo": "/bintray/jcenter"
+  },
+  {
+    "name": "guava-vfs",
+    "repo": "maven",
+    "owner": "simon04",
+    "desc": "Guava's Files for Apache Commons VFS",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2015-09-15T21:17:50.844Z",
+    "website_url": "https://github.com/simon04/guava-vfs",
+    "issue_tracker_url": "https://github.com/simon04/guava-vfs/issues",
+    "linked_to_repos": [
+      "jcenter"
+    ],
+    "permissions": [],
+    "versions": [
+      "1.1.0",
+      "1.0.3",
+      "1.0.2",
+      "1.0.1",
+      "1.0.0"
+    ],
+    "latest_version": "1.1.0",
+    "updated": "2015-09-24T11:43:55.906Z",
+    "rating_count": 0,
+    "system_ids": [
+      "net.simon04:guava-vfs"
+    ],
+    "vcs_url": "https://github.com/simon04/guava-vfs.git",
+    "maturity": "",
+    "linked_to_repo": "/bintray/jcenter"
+  },
+  {
+    "name": "guava-factory",
+    "repo": "maven",
+    "owner": "kozlov",
+    "desc": "Factory methods for Guava",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2014-10-05T11:15:47.656Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [
+      "jcenter"
+    ],
+    "permissions": [],
+    "versions": [
+      "0.1"
+    ],
+    "latest_version": "0.1",
+    "updated": "2014-10-05T12:46:50.697Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.github.guava:guava-factory"
+    ],
+    "vcs_url": "https://github.com/orionll/guava-factory",
+    "maturity": "",
+    "linked_to_repo": "/bintray/jcenter"
+  },
+  {
+    "name": "guava-metrics",
+    "repo": "maven",
+    "owner": "krokskogstrollet",
+    "desc": "A small class publishing guava cache statistics to metrics.",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2014-11-05T13:26:25.186Z",
+    "website_url": "https://github.com/finn-no/guava-metrics",
+    "issue_tracker_url": "https://github.com/finn-no/guava-metrics/issues",
+    "linked_to_repos": [
+      "jcenter"
+    ],
+    "permissions": [],
+    "versions": [
+      "1.2",
+      "1.1",
+      "1.0"
+    ],
+    "latest_version": "1.2",
+    "updated": "2014-11-07T15:16:10.445Z",
+    "rating_count": 0,
+    "system_ids": [
+      "no.finn.guava-metrics:guava-metrics"
+    ],
+    "vcs_url": "https://github.com/finn-no/guava-metrics.git",
+    "maturity": "",
+    "linked_to_repo": "/bintray/jcenter"
+  },
+  {
+    "name": "Mache-Guava",
+    "repo": "ExcelianOSS",
+    "owner": "excelian",
+    "desc": "Mache Guava library: \r\n\r\nMache is a a nearside NoSQL Cache with eventing; built from a 'mash-up' \r\nof open source technologies for multiple pluggable NoSQL backends and multiple \r\npluggable messaging platforms. \r\n\r\nIt currently supports the following NoSQL Platforms: \r\n- Cassandra \r\n- Mongodb \r\n- Couchbase \r\n\r\nAdditionally, Mache supports the following messaging platforms: \r\n- Kafka \r\n- Rabbit \r\n- ActiveMQ ",
+    "labels": [
+      "big-data",
+      "cache",
+      "java",
+      "nosql"
+    ],
+    "attribute_names": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2016-02-04T14:13:29.803Z",
+    "website_url": "https://github.com/Excelian/Mache",
+    "issue_tracker_url": "https://github.com/Excelian/Mache/issues",
+    "linked_to_repos": [
+      "jcenter"
+    ],
+    "permissions": [],
+    "versions": [
+      "0.7.1"
+    ],
+    "latest_version": "0.7.1",
+    "updated": "2016-02-05T04:10:11.256Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.excelian.mache:mache-guava"
+    ],
+    "vcs_url": " git@github.com:Excelian/Mache.git",
+    "maturity": "",
+    "linked_to_repo": "/bintray/jcenter"
+  },
+  {
+    "name": "Guava-Collectors",
+    "repo": "maven",
+    "owner": "holasylk",
+    "desc": "",
+    "labels": [],
+    "attribute_names": [
+      "maturity"
+    ],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2016-04-25T16:12:03.290Z",
+    "website_url": "",
+    "issue_tracker_url": "",
+    "linked_to_repos": [
+      "jcenter"
+    ],
+    "permissions": [],
+    "versions": [
+      "0.2.3",
+      "0.1.2"
+    ],
+    "latest_version": "0.2.3",
+    "updated": "2016-04-29T16:28:42.412Z",
+    "rating_count": 0,
+    "system_ids": [
+      "io.github.holasylk:guava-collectors"
+    ],
+    "vcs_url": "https://github.com/Holasylk/Guava-Collectors.git",
+    "maturity": "Development",
+    "linked_to_repo": "/bintray/jcenter"
+  },
+  {
+    "name": "guava-stream",
+    "repo": "maven",
+    "owner": "yanaga",
+    "desc": "Java 8 Stream API classes for Guava",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2015-02-22T21:20:32.215Z",
+    "website_url": "https://github.com/yanaga/guava-stream",
+    "issue_tracker_url": "https://github.com/yanaga/guava-stream/issues",
+    "linked_to_repos": [
+      "jcenter"
+    ],
+    "permissions": [],
+    "versions": [
+      "1.0"
+    ],
+    "latest_version": "1.0",
+    "updated": "2015-02-22T21:40:51.097Z",
+    "rating_count": 0,
+    "system_ids": [
+      "me.yanaga:guava-stream"
+    ],
+    "vcs_url": "https://github.com/yanaga/guava-stream",
+    "maturity": "",
+    "linked_to_repo": "/bintray/jcenter"
+  },
+  {
+    "name": "guava-eventbus",
+    "repo": "opensource",
+    "owner": "diffplug",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2016-01-19T02:52:36.605Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [
+      "jcenter"
+    ],
+    "permissions": [],
+    "versions": [
+      "19.0.0"
+    ],
+    "latest_version": "19.0.0",
+    "updated": "2016-06-01T04:05:14.251Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.diffplug.guava:guava-eventbus"
+    ],
+    "vcs_url": "https://github.com/diffplug/durian",
+    "maturity": "",
+    "linked_to_repo": "/bintray/jcenter"
+  },
+  {
+    "name": "guava-concurrent",
+    "repo": "opensource",
+    "owner": "diffplug",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2016-01-19T02:52:18.830Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [
+      "jcenter"
+    ],
+    "permissions": [],
+    "versions": [
+      "19.0.0"
+    ],
+    "latest_version": "19.0.0",
+    "updated": "2016-06-01T04:05:10.628Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.diffplug.guava:guava-concurrent"
+    ],
+    "vcs_url": "https://github.com/diffplug/durian",
+    "maturity": "",
+    "linked_to_repo": "/bintray/jcenter"
+  },
+  {
+    "name": "guava-cache",
+    "repo": "opensource",
+    "owner": "diffplug",
+    "desc": "",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2016-01-19T02:51:53.188Z",
+    "website_url": "",
+    "issue_tracker_url": "",
+    "linked_to_repos": [
+      "jcenter"
+    ],
+    "permissions": [],
+    "versions": [
+      "19.0.0"
+    ],
+    "latest_version": "19.0.0",
+    "updated": "2016-06-01T04:05:04.246Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.diffplug.guava:guava-cache"
+    ],
+    "vcs_url": "https://github.com/diffplug/durian",
+    "maturity": "",
+    "linked_to_repo": "/bintray/jcenter"
+  },
+  {
+    "name": "guava-core",
+    "repo": "opensource",
+    "owner": "diffplug",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2016-01-19T02:52:26.173Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [
+      "jcenter"
+    ],
+    "permissions": [],
+    "versions": [
+      "19.0.0"
+    ],
+    "latest_version": "19.0.0",
+    "updated": "2016-06-01T03:06:55.270Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.diffplug.guava:guava-core"
+    ],
+    "vcs_url": "https://github.com/diffplug/durian",
+    "maturity": "",
+    "linked_to_repo": "/bintray/jcenter"
+  },
+  {
+    "name": "guava-parse",
+    "repo": "opensource",
+    "owner": "diffplug",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2016-01-19T02:52:53.567Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [
+      "jcenter"
+    ],
+    "permissions": [],
+    "versions": [
+      "19.0.0"
+    ],
+    "latest_version": "19.0.0",
+    "updated": "2016-06-01T04:05:21.119Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.diffplug.guava:guava-parse"
+    ],
+    "vcs_url": "https://github.com/diffplug/durian",
+    "maturity": "",
+    "linked_to_repo": "/bintray/jcenter"
+  },
+  {
+    "name": "guava-reflect",
+    "repo": "opensource",
+    "owner": "diffplug",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2016-01-19T02:53:00.362Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [
+      "jcenter"
+    ],
+    "permissions": [],
+    "versions": [
+      "19.0.0"
+    ],
+    "latest_version": "19.0.0",
+    "updated": "2016-06-01T04:05:24.091Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.diffplug.guava:guava-reflect"
+    ],
+    "vcs_url": "https://github.com/diffplug/durian",
+    "maturity": "",
+    "linked_to_repo": "/bintray/jcenter"
+  },
+  {
+    "name": "guava-io",
+    "repo": "opensource",
+    "owner": "diffplug",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2016-01-19T02:52:45.044Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [
+      "jcenter"
+    ],
+    "permissions": [],
+    "versions": [
+      "19.0.0"
+    ],
+    "latest_version": "19.0.0",
+    "updated": "2016-06-01T04:05:17.225Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.diffplug.guava:guava-io"
+    ],
+    "vcs_url": "https://github.com/diffplug/durian",
+    "maturity": "",
+    "linked_to_repo": "/bintray/jcenter"
+  },
+  {
+    "name": "guava-collect",
+    "repo": "opensource",
+    "owner": "diffplug",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2016-01-19T02:52:07.964Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [
+      "jcenter"
+    ],
+    "permissions": [],
+    "versions": [
+      "19.0.0"
+    ],
+    "latest_version": "19.0.0",
+    "updated": "2016-06-01T04:05:07.693Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.diffplug.guava:guava-collect"
+    ],
+    "vcs_url": "https://github.com/diffplug/durian",
+    "maturity": "",
+    "linked_to_repo": "/bintray/jcenter"
+  },
+  {
+    "name": "com.google.guava:guava-io",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "Guava IO contains a variety of types and utilities to ease \n    IO handling in Java.",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-12T21:19:15.125Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "r03"
+    ],
+    "latest_version": "r03",
+    "updated": "2015-04-21T06:13:23.845Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.google.guava:guava-io"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "com.google.guava:guava-collections",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "Guava Collections is a collections extension library with \n    expanded collection types, implementations, and utility\n    methods for dealing with aggregate data.",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-12T21:19:15.298Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "r03"
+    ],
+    "latest_version": "r03",
+    "updated": "2015-03-18T15:58:08.474Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.google.guava:guava-collections"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "com.google.guava:guava-bootstrap",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "ExecutorService's type parameters changed between JDK5 and JDK6 in a\n    way that makes it impossible for our invokeAll/invokeAny methods to\n    match both at compile time. This project builds a JDK6-like copy of\n    ExecutorService (but with JDK5 compiler settings to ensure that it will\n    work with JRE5 at runtime).  This project's is then used in the bootstrap\n    class path of Guava proper.",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-12T21:19:15.431Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "12.0-rc1",
+      "11.0.2-atlassian-02",
+      "11.0.2-atlassian-01",
+      "11.0.2",
+      "11.0.1",
+      "11.0",
+      "11.0-rc1",
+      "10.0.1",
+      "10.0",
+      "10.0-rc3",
+      "10.0-rc2",
+      "10.0-rc1"
+    ],
+    "latest_version": "12.0-rc1",
+    "updated": "2015-12-17T08:36:36.087Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.google.guava:guava-bootstrap"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "com.google.guava:guava-primitives",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "Guava is a suite of core and expanded libraries that include \n    utility classes, google's collections, io classes, and much \n    much more.",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-12T21:19:14.998Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "r03"
+    ],
+    "latest_version": "r03",
+    "updated": "2015-03-18T15:58:36.536Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.google.guava:guava-primitives"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "com.google.guava:guava-jdk5",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "Guava is a suite of core and expanded libraries that include\n    utility classes, google's collections, io classes, and much\n    much more.\n\n    Guava has only one code dependency - javax.annotation,\n    per the JSR-305 spec.",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-12T21:19:02.217Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "17.0",
+      "17.0-rc1",
+      "17.0-rc2",
+      "16.0",
+      "16.0-rc1",
+      "14.0.1",
+      "14.0.1-rc1",
+      "13.0"
+    ],
+    "latest_version": "17.0",
+    "updated": "2015-04-10T16:02:26.621Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.google.guava:guava-jdk5"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "com.google.guava:guava-base",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "Guava Base contains core classes, utility methods, and services\n    used by other parts of the Guava libraries.",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-12T21:19:01.195Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "r03"
+    ],
+    "latest_version": "r03",
+    "updated": "2015-03-18T15:58:49.014Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.google.guava:guava-base"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "com.google.guava:guava-concurrent",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "Guava Concurrency Libraries are an expanded set of services and\n    types supporting advanced concurrent programming in Java.",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-12T21:19:01.325Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "r03"
+    ],
+    "latest_version": "r03",
+    "updated": "2014-01-30T05:21:46.645Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.google.guava:guava-concurrent"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "com.google.guava:guava-annotations",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "Guava annotations are used throughout the Guava libraries.",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-12T21:19:01.445Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "r03"
+    ],
+    "latest_version": "r03",
+    "updated": "2015-03-18T15:58:21.010Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.google.guava:guava-annotations"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "com.google.guava:guava-parent",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-12T21:19:02.410Z",
+    "website_url": "http://code.google.com/p/guava-libraries",
+    "issue_tracker_url": "http://code.google.com/p/guava-libraries/issues",
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "22.0-android",
+      "22.0",
+      "22.0-rc1-android",
+      "22.0-rc1",
+      "21.0",
+      "21.0-rc2",
+      "21.0-rc1",
+      "20.0",
+      "20.0-rc1",
+      "19.0",
+      "19.0-rc3",
+      "19.0-rc2",
+      "19.0-rc1",
+      "18.0",
+      "18.0-rc2",
+      "18.0-rc1",
+      "11.0.2-atlassian-02",
+      "17.0",
+      "17.0-rc2",
+      "17.0-rc1",
+      "11.0.2-atlassian-01",
+      "16.0.1",
+      "16.0",
+      "16.0-rc1",
+      "15.0",
+      "15.0-rc1",
+      "14.0.1",
+      "14.0",
+      "14.0-rc3",
+      "14.0-rc2",
+      "14.0-rc1",
+      "13.0.1",
+      "13.0",
+      "13.0-final",
+      "13.0-rc2",
+      "13.0-rc1",
+      "12.0.1",
+      "12.0",
+      "12.0-rc2",
+      "12.0-rc1",
+      "11.0.2",
+      "11.0.1",
+      "11.0",
+      "11.0-rc1",
+      "10.0.1",
+      "10.0",
+      "10.0-rc3",
+      "10.0-rc2",
+      "10.0-rc1",
+      "r03"
+    ],
+    "latest_version": "22.0-android",
+    "updated": "2017-05-22T20:20:46.892Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.google.guava:guava-parent"
+    ],
+    "vcs_url": "http://code.google.com/p/guava-libraries/source/browse",
+    "maturity": ""
+  },
+  {
+    "name": "com.google.guava:guava-gwt",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "Guava is a suite of core and expanded libraries that include\n    utility classes, google's collections, io classes, and much\n    much more.\n\n    This project includes GWT-friendly sources.",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-12T21:19:16.260Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "22.0",
+      "22.0-rc1",
+      "21.0",
+      "21.0-rc2",
+      "21.0-rc1",
+      "20.0",
+      "20.0-rc1",
+      "19.0",
+      "19.0-rc3",
+      "19.0-rc2",
+      "19.0-rc1",
+      "11.0.2-atlassian-02",
+      "11.0.2-atlassian-01",
+      "18.0-rc2",
+      "18.0",
+      "18.0-rc1",
+      "17.0",
+      "17.0-rc2",
+      "17.0-rc1",
+      "16.0-rc1",
+      "16.0.1",
+      "16.0",
+      "15.0",
+      "15.0-rc1",
+      "14.0.1",
+      "14.0",
+      "14.0-rc3",
+      "14.0-rc2",
+      "14.0-rc1",
+      "13.0.1",
+      "13.0-final",
+      "13.0",
+      "13.0-rc2",
+      "13.0-rc1",
+      "12.0.1",
+      "12.0",
+      "12.0-rc2",
+      "12.0-rc1",
+      "11.0.2",
+      "11.0.1",
+      "11.0",
+      "11.0-rc1",
+      "10.0.1",
+      "10.0",
+      "10.0-rc3",
+      "10.0-rc2",
+      "10.0-rc1"
+    ],
+    "latest_version": "22.0",
+    "updated": "2017-06-03T01:48:41.526Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.google.guava:guava-gwt"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "com.google.guava:guava-tests",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "The unit tests for the Guava libraries - separated into a\n    separate artifact to allow for the testlibs to depend on guava\n    itself.",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-13T16:10:37.610Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "22.0-android",
+      "22.0",
+      "22.0-rc1",
+      "21.0",
+      "21.0-rc2",
+      "21.0-rc1",
+      "20.0",
+      "20.0-rc1",
+      "19.0",
+      "19.0-rc3",
+      "19.0-rc2",
+      "19.0-rc1",
+      "18.0-rc2",
+      "18.0-rc1",
+      "17.0-rc1",
+      "18.0",
+      "17.0-rc2",
+      "17.0",
+      "16.0-rc1",
+      "16.0",
+      "16.0.1",
+      "15.0",
+      "15.0-rc1",
+      "14.0.1",
+      "14.0",
+      "14.0-rc3",
+      "14.0-rc2",
+      "14.0-rc1",
+      "13.0.1",
+      "13.0",
+      "13.0-final",
+      "13.0-rc2",
+      "13.0-rc1",
+      "12.0.1",
+      "12.0",
+      "12.0-rc2",
+      "12.0-rc1",
+      "11.0.2",
+      "11.0.1",
+      "11.0",
+      "11.0-rc1",
+      "10.0.1",
+      "10.0",
+      "10.0-rc3",
+      "10.0-rc2",
+      "10.0-rc1"
+    ],
+    "latest_version": "22.0-android",
+    "updated": "2017-06-14T07:02:37.962Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.google.guava:guava-tests"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "com.google.guava:guava-testlib",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "Guava testlib is a set of java classes used for more convenient\n    unit testing - particularly to assist the tests for Guava itself.",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-12T21:19:06.997Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "22.0-android",
+      "22.0",
+      "22.0-rc1-android",
+      "22.0-rc1",
+      "21.0",
+      "21.0-rc2",
+      "21.0-rc1",
+      "20.0",
+      "20.0-rc1",
+      "19.0",
+      "19.0-rc3",
+      "19.0-rc2",
+      "19.0-rc1",
+      "18.0-rc2",
+      "18.0",
+      "18.0-rc1",
+      "17.0-rc2",
+      "17.0",
+      "17.0-rc1",
+      "16.0-rc1",
+      "16.0.1",
+      "16.0",
+      "15.0",
+      "15.0-rc1",
+      "14.0.1",
+      "14.0",
+      "14.0-rc3",
+      "14.0-rc2",
+      "14.0-rc1",
+      "13.0.1",
+      "13.0",
+      "13.0-final",
+      "13.0-rc2",
+      "13.0-rc1",
+      "12.0.1",
+      "12.0",
+      "12.0-rc2",
+      "12.0-rc1",
+      "11.0.2-atlassian-02",
+      "11.0.2-atlassian-01",
+      "11.0.2",
+      "11.0.1",
+      "11.0",
+      "11.0-rc1",
+      "10.0.1",
+      "10.0",
+      "10.0-rc3",
+      "10.0-rc2",
+      "10.0-rc1"
+    ],
+    "latest_version": "22.0-android",
+    "updated": "2017-06-20T16:21:06.915Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.google.guava:guava-testlib"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "io.janusproject.guava:guava-parent",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2014-07-08T08:31:32.029Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "19.0.0",
+      "17.0.2",
+      "17.0"
+    ],
+    "latest_version": "19.0.0",
+    "updated": "2015-05-29T16:54:44.029Z",
+    "rating_count": 0,
+    "system_ids": [
+      "io.janusproject.guava:guava-parent"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "com.google.guava:guava-bridge",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2014-02-24T08:50:54.527Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "11.0.2-atlassian-02",
+      "11.0.2-atlassian-01"
+    ],
+    "latest_version": "11.0.2-atlassian-02",
+    "updated": "2015-02-21T02:08:18.682Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.google.guava:guava-bridge"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "org.hudsonci.lib.guava:guava",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2015-11-16T01:30:37.012Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "14.0.1-h-3",
+      "14.0.1-h-1"
+    ],
+    "latest_version": "14.0.1-h-3",
+    "updated": "2016-10-06T16:09:44.980Z",
+    "rating_count": 0,
+    "system_ids": [
+      "org.hudsonci.lib.guava:guava"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "com.googlecode.guava-osgi:guava-osgi",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "Repackaging of Google Guava libraries as OSGi bundle",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-12T21:34:31.366Z",
+    "website_url": "http://code.google.com/p/guava-osgi/",
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "11.0.1",
+      "11.0.0",
+      "10.0.1",
+      "10.0.0",
+      "9.0.0",
+      "8.0.0",
+      "7.0.0",
+      "6.0.0",
+      "5.0.0",
+      "4.0.0",
+      "3.0.0"
+    ],
+    "latest_version": "11.0.1",
+    "updated": "2015-07-19T18:22:09.849Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.googlecode.guava-osgi:guava-osgi"
+    ],
+    "vcs_url": "http://guava-osgi.googlecode.com/svn/trunk/",
+    "maturity": ""
+  },
+  {
+    "name": "org.funcish:funcish-guava",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2013-05-22T14:16:53.000Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "0.1.0",
+      "0.0.5"
+    ],
+    "latest_version": "0.1.0",
+    "updated": "2014-06-19T16:31:01.800Z",
+    "rating_count": 0,
+    "system_ids": [
+      "org.funcish:funcish-guava"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "com.theoryinpractise:halbuilder-guava",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-11-06T20:49:00.000Z",
+    "website_url": "http://gotohal.net",
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "4.0.1",
+      "2.0.2",
+      "2.0.1"
+    ],
+    "latest_version": "4.0.1",
+    "updated": "2016-04-24T17:59:25.569Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.theoryinpractise:halbuilder-guava"
+    ],
+    "vcs_url": "http://github.com/halbuilder/halbuilder-guava",
+    "maturity": ""
+  },
+  {
+    "name": "org.assertj:assertj-guava",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 1,
+    "created": "2013-03-26T09:31:15.000Z",
+    "website_url": "https://github.com/joel-costigliola/assertj-guava",
+    "issue_tracker_url": "https://github.com/joel-costigliola/assertj-guava/issues",
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "3.1.0",
+      "3.0.0",
+      "2.0.0",
+      "1.3.1",
+      "1.3.0",
+      "1.2.0",
+      "1.1.0",
+      "1.0.0"
+    ],
+    "latest_version": "3.1.0",
+    "updated": "2017-02-05T18:40:46.054Z",
+    "rating_count": 0,
+    "system_ids": [
+      "org.assertj:assertj-guava"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "guava-preconditions",
+    "repo": "maven",
+    "owner": "cookingfox",
+    "desc": "Only the Preconditions class from Google Guava",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2016-06-11T15:30:30.229Z",
+    "website_url": "https://github.com/cookingfox/guava-preconditions",
+    "issue_tracker_url": "https://github.com/cookingfox/guava-preconditions/issues",
+    "linked_to_repos": [
+      "jcenter"
+    ],
+    "permissions": [],
+    "versions": [
+      "0.1.5",
+      "0.1.4",
+      "0.1.3",
+      "0.1.1",
+      "0.1.2",
+      "0.1.0"
+    ],
+    "latest_version": "0.1.5",
+    "updated": "2016-06-17T09:45:33.922Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.cookingfox:guava-preconditions"
+    ],
+    "vcs_url": "https://github.com/cookingfox/guava-preconditions",
+    "maturity": "",
+    "linked_to_repo": "/bintray/jcenter"
+  },
+  {
+    "name": "org.sonatype.sisu:sisu-guava",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "Patched build of Guava: Google Core Libraries for Java 1.5+",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-12T20:33:27.636Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "0.11.1",
+      "0.9.9"
+    ],
+    "latest_version": "0.11.1",
+    "updated": "2016-02-12T01:18:09.806Z",
+    "rating_count": 0,
+    "system_ids": [
+      "org.sonatype.sisu:sisu-guava"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "biz.littlej.jreqs:jreqs-guava",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "jreqs-guava module",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-13T15:35:08.508Z",
+    "website_url": "https://github.com/yannickloth/jreqs",
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "0.1.2",
+      "0.1.1",
+      "0.1.0"
+    ],
+    "latest_version": "0.1.2",
+    "updated": "2015-04-21T01:36:21.550Z",
+    "rating_count": 0,
+    "system_ids": [
+      "biz.littlej.jreqs:jreqs-guava"
+    ],
+    "vcs_url": "https://github.com/LittleJ/jreqs",
+    "maturity": ""
+  },
+  {
+    "name": "org.99soft.guice:g-guava",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "TODO",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-13T15:57:54.748Z",
+    "website_url": "http://99soft.github.com/g-guava/",
+    "issue_tracker_url": "https://github.com/99soft/g-guava/issues",
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "0.1"
+    ],
+    "latest_version": "0.1",
+    "updated": "2014-10-09T05:49:55.269Z",
+    "rating_count": 0,
+    "system_ids": [
+      "org.99soft.guice:g-guava"
+    ],
+    "vcs_url": "http://github.com/99soft/g-guava",
+    "maturity": ""
+  },
+  {
+    "name": "com.github.rholder:guava-retrying",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "This is a small extension to Google's Guava library to allow for the creation of configurable retrying strategies for an arbitrary function call, such as something that talks to a remote service with flaky uptime.",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 1,
+    "created": "2012-12-13T16:11:25.027Z",
+    "website_url": "http://rholder.github.com",
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "2.0.0",
+      "1.0.7",
+      "1.0.6",
+      "1.0.5",
+      "1.0.4",
+      "1.0.3",
+      "1.0.2",
+      "1.0.1",
+      "1.0.0"
+    ],
+    "latest_version": "2.0.0",
+    "updated": "2015-11-24T21:23:05.400Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.github.rholder:guava-retrying"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "org.hobsoft.entangle:entangle-guava",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "Entangle support for Google Guava.",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2013-01-01T20:54:06.428Z",
+    "website_url": "https://github.com/markhobson/entangle-guava",
+    "issue_tracker_url": "https://github.com/markhobson/entangle-guava/issues",
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "0.1.0"
+    ],
+    "latest_version": "0.1.0",
+    "updated": "2014-04-03T00:01:23.462Z",
+    "rating_count": 0,
+    "system_ids": [
+      "org.hobsoft.entangle:entangle-guava"
+    ],
+    "vcs_url": "https://github.com/markhobson/entangle-guava",
+    "maturity": ""
+  },
+  {
+    "name": "org.sonatype.sisu.inject:guava-parent",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-12T20:33:56.393Z",
+    "website_url": "http://code.google.com/p/guava-libraries",
+    "issue_tracker_url": "http://code.google.com/p/guava-libraries/issues",
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "0.11.1",
+      "0.9.9"
+    ],
+    "latest_version": "0.11.1",
+    "updated": "2015-03-11T00:11:54.577Z",
+    "rating_count": 0,
+    "system_ids": [
+      "org.sonatype.sisu.inject:guava-parent"
+    ],
+    "vcs_url": "http://github.com/sonatype/sisu-guava",
+    "maturity": ""
+  },
+  {
+    "name": "com.google.guava:guava-rate-limiter",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2016-03-16T23:53:11.282Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "15.0-atlassian-1"
+    ],
+    "latest_version": "15.0-atlassian-1",
+    "updated": "2016-03-17T08:13:05.356Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.google.guava:guava-rate-limiter"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "co.tomlee.guava.services:guava-jetty-service",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2014-07-30T16:45:42.104Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "0.0.3",
+      "0.0.2"
+    ],
+    "latest_version": "0.0.3",
+    "updated": "2015-06-25T02:40:16.773Z",
+    "rating_count": 0,
+    "system_ids": [
+      "co.tomlee.guava.services:guava-jetty-service"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "co.tomlee.guava.services:guava-nifty-service",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2014-09-04T03:43:01.934Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "0.0.6",
+      "0.0.3",
+      "0.0.2",
+      "0.0.1",
+      "0.0.5",
+      "0.0.4"
+    ],
+    "latest_version": "0.0.6",
+    "updated": "2015-06-10T20:53:18.722Z",
+    "rating_count": 0,
+    "system_ids": [
+      "co.tomlee.guava.services:guava-nifty-service"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "de.flapdoodle.guava:de.flapdoodle.guava",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2014-01-21T05:27:41.984Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "1.4.1",
+      "1.4.0",
+      "1.3.3",
+      "1.3.2",
+      "1.3.6",
+      "1.3.7",
+      "1.3.5",
+      "1.3.4",
+      "1.2",
+      "1.1",
+      "1.3.1",
+      "1.3",
+      "1.0"
+    ],
+    "latest_version": "1.4.1",
+    "updated": "2016-09-26T23:06:33.221Z",
+    "rating_count": 0,
+    "system_ids": [
+      "de.flapdoodle.guava:de.flapdoodle.guava"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "com.google.guava:guava-parent-jdk5",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": null,
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-12T21:19:01.107Z",
+    "website_url": "http://code.google.com/p/guava-libraries",
+    "issue_tracker_url": "http://code.google.com/p/guava-libraries/issues",
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "17.0-rc1",
+      "17.0",
+      "17.0-rc2",
+      "16.0",
+      "16.0-rc1",
+      "14.0.1",
+      "14.0.1-rc1",
+      "13.0"
+    ],
+    "latest_version": "17.0-rc1",
+    "updated": "2015-02-21T14:16:54.876Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.google.guava:guava-parent-jdk5"
+    ],
+    "vcs_url": "http://code.google.com/p/guava-libraries/source/browse",
+    "maturity": ""
+  },
+  {
+    "name": "com.google.guava:guava-tests-jdk5",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "The unit tests for the Guava libraries - separated into a\n    separate artifact to allow for the testlibs to depend on guava\n    itself.",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-13T16:10:33.728Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "17.0",
+      "17.0-rc2",
+      "17.0-rc1",
+      "16.0",
+      "16.0-rc1",
+      "14.0.1",
+      "14.0.1-rc1",
+      "13.0"
+    ],
+    "latest_version": "17.0",
+    "updated": "2015-06-22T04:33:10.953Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.google.guava:guava-tests-jdk5"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  },
+  {
+    "name": "com.google.guava:guava-bootstrap-jdk5",
+    "repo": "jcenter",
+    "owner": "bintray",
+    "desc": "ExecutorService's type parameters changed between JDK5 and JDK6 in a\n    way that makes it impossible for our invokeAll/invokeAny methods to\n    match both at compile time. This project builds a JDK6-like copy of\n    ExecutorService (but with JDK5 compiler settings to ensure that it will\n    work with JRE5 at runtime).  This project's is then used in the bootstrap\n    class path of Guava proper.",
+    "labels": [],
+    "attribute_names": [],
+    "licenses": [],
+    "custom_licenses": [],
+    "followers_count": 0,
+    "created": "2012-12-13T16:10:33.855Z",
+    "website_url": null,
+    "issue_tracker_url": null,
+    "linked_to_repos": [],
+    "permissions": [],
+    "versions": [
+      "17.0-rc2",
+      "17.0",
+      "17.0-rc1",
+      "16.0",
+      "16.0-rc1",
+      "14.0.1",
+      "14.0.1-rc1",
+      "13.0"
+    ],
+    "latest_version": "17.0-rc2",
+    "updated": "2015-03-04T23:33:30.417Z",
+    "rating_count": 0,
+    "system_ids": [
+      "com.google.guava:guava-bootstrap-jdk5"
+    ],
+    "vcs_url": null,
+    "maturity": ""
+  }
+]

@@ -22,6 +22,7 @@ package org.xwiki.contrib.repository.bintray.model;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import org.xwiki.contrib.repository.bintray.BintrayParameters;
 import org.xwiki.extension.repository.DefaultExtensionRepositoryDescriptor;
 import org.xwiki.extension.repository.ExtensionRepositoryDescriptor;
 
@@ -31,8 +32,6 @@ import org.xwiki.extension.repository.ExtensionRepositoryDescriptor;
  */
 public class BintrayRepositoryDescriptor
 {
-    private String NATIVE_REPO_URL = "http://dl.bintray.com";
-
     private String id;
 
     private BintrayRepositoryType repositoryType;
@@ -44,6 +43,10 @@ public class BintrayRepositoryDescriptor
     /**
      * @version $Id: 81a55f3a16b33bcf2696d0cac493b25c946b6ee4 $
      * @since 1.0
+     * @param id -
+     * @param repositoryType -
+     * @param subject -
+     * @param repo -
      */
     public BintrayRepositoryDescriptor(String id, BintrayRepositoryType repositoryType, String subject, String repo)
     {
@@ -68,7 +71,7 @@ public class BintrayRepositoryDescriptor
      */
     public URI getNativeRepoURI() throws URISyntaxException
     {
-        return new URI(NATIVE_REPO_URL + "/" + subject + "/" + repo);
+        return new URI(BintrayParameters.NATIVE_REPO_URL + "/" + subject + "/" + repo);
     }
 
     /**

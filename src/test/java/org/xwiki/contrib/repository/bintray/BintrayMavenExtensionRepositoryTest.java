@@ -1,8 +1,6 @@
 package org.xwiki.contrib.repository.bintray;
 
-import java.lang.reflect.Array;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,7 +8,7 @@ import org.junit.Test;
 import org.xwiki.extension.repository.DefaultExtensionRepositoryDescriptor;
 import org.xwiki.extension.repository.ExtensionRepositoryDescriptor;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Krzysztof on 13.06.2017.
@@ -34,7 +32,7 @@ public class BintrayMavenExtensionRepositoryTest
 
             //when
             BintrayMavenExtensionRepository bintrayMavenExtensionRepository =
-                    new BintrayMavenExtensionRepository(extensionRepositoryDescriptor, null);
+                    new BintrayMavenExtensionRepository(extensionRepositoryDescriptor, null, null, null, null);
 
             //then
             assertEquals("bintray", bintrayMavenExtensionRepository.getSubject());

@@ -71,9 +71,23 @@
       <artifactId>xwiki-commons-extension-repository-maven</artifactId>
       <version>${commons.version}</version>
     </dependency>
+      <dependency>
+          <groupId>org.xwiki.commons</groupId>
+          <artifactId>xwiki-commons-extension-repository-http</artifactId>
+          <version>${commons.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+      </dependency>
+      <dependency>
+          <groupId>commons-io</groupId>
+          <artifactId>commons-io</artifactId>
+      </dependency>
 
 
-    <!-- Only needed if some of the component's APIs must be made visible to scripting in wiki pages -->
+      <!-- Only needed if some of the component's APIs must be made visible to scripting in wiki pages -->
     <dependency>
       <groupId>org.xwiki.commons</groupId>
       <artifactId>xwiki-commons-script</artifactId>

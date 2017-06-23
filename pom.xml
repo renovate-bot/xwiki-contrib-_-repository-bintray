@@ -28,7 +28,7 @@
     <version>8.4-8</version>
   </parent>
   <artifactId>repository-bintray</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <name>Extension Repository Connector - Bintray</name>
   <description>
     Extension extending Extension Module with possibility to import extension from Bintray repositories.
@@ -37,7 +37,7 @@
     <connection>scm:git:git://github.com/xwiki-contrib/repository-bintray.git</connection>
     <developerConnection>scm:git:git@github.com:xwiki-contrib/repository-bintray.git</developerConnection>
     <url>https://github.com/xwiki-contrib/repository-bintray/tree/master</url>
-    <tag>repository-bintray-1.0</tag>
+    <tag>HEAD</tag>
   </scm>
   <developers>
     <developer>

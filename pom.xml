@@ -36,7 +36,7 @@
   <scm>
     <connection>scm:git:git://github.com/xwiki-contrib/repository-bintray.git</connection>
     <developerConnection>scm:git:git@github.com:xwiki-contrib/repository-bintray.git</developerConnection>
-    <url>https://github.com/xwiki-contrib/repository-bintray</url>
+    <url>https://github.com/xwiki-contrib/repository-bintray/tree/master</url>
   </scm>
   <developers>
     <developer>

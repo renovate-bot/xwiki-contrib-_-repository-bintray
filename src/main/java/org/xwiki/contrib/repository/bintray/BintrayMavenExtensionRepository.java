@@ -43,6 +43,7 @@ import org.xwiki.extension.internal.ExtensionFactory;
 import org.xwiki.extension.repository.AbstractExtensionRepository;
 import org.xwiki.extension.repository.ExtensionRepositoryDescriptor;
 import org.xwiki.extension.repository.aether.internal.AetherExtensionRepository;
+import org.xwiki.extension.repository.http.internal.HttpClientFactory;
 import org.xwiki.extension.repository.result.CollectionIterableResult;
 import org.xwiki.extension.repository.result.IterableResult;
 import org.xwiki.extension.repository.search.SearchException;
@@ -61,11 +62,12 @@ public class BintrayMavenExtensionRepository extends AbstractExtensionRepository
 
     private final AetherExtensionRepository aetherExtensionRepository;
 
-    private final CloseableHttpClient httpClient;
 
     private final ExtensionLicenseManager licenseManager;
 
     private final ExtensionFactory extensionFactory;
+
+    private final HttpClientFactory httpClientFactory;
 
     private final HttpClientContext localContext;
 
@@ -76,19 +78,20 @@ public class BintrayMavenExtensionRepository extends AbstractExtensionRepository
     /**
      * @param extensionRepositoryDescriptor -
      * @param aetherExtensionRepository - previously created aetherExtensionRepository
-     * @param httpClient -
      * @param licenseManager -
      * @param extensionFactory -
+     * @param httpClientFactory -
      */
     public BintrayMavenExtensionRepository(ExtensionRepositoryDescriptor extensionRepositoryDescriptor,
-            AetherExtensionRepository aetherExtensionRepository, CloseableHttpClient httpClient,
-            ExtensionLicenseManager licenseManager, ExtensionFactory extensionFactory)
+            AetherExtensionRepository aetherExtensionRepository,
+            ExtensionLicenseManager licenseManager, ExtensionFactory extensionFactory,
+            HttpClientFactory httpClientFactory)
     {
         super(extensionRepositoryDescriptor);
         this.aetherExtensionRepository = aetherExtensionRepository;
-        this.httpClient = httpClient;
         this.licenseManager = licenseManager;
         this.extensionFactory = extensionFactory;
+        this.httpClientFactory = httpClientFactory;
         this.localContext = HttpClientContext.create();
 
         populateSubjectRepoFields(extensionRepositoryDescriptor.getURI());
@@ -135,6 +138,7 @@ public class BintrayMavenExtensionRepository extends AbstractExtensionRepository
         }
 
         HttpGet getMethod = new HttpGet(url);
+        CloseableHttpClient httpClient = httpClientFactory.createClient(null, null);
         CloseableHttpResponse response;
         try {
             if (this.localContext != null) {
@@ -164,6 +168,7 @@ public class BintrayMavenExtensionRepository extends AbstractExtensionRepository
                     String.format("Invalid response body from the bintray server when requesting: [%s]", pattern), e);
         } finally {
             IOUtils.closeQuietly(response);
+            IOUtils.closeQuietly(httpClient);
         }
 
         bintrayPackages.limitContent(limit);

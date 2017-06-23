@@ -23,7 +23,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
-import org.apache.http.impl.client.CloseableHttpClient;
 import org.slf4j.Logger;
 import org.xwiki.component.annotation.Component;
 import org.xwiki.component.phase.Initializable;
@@ -61,7 +60,7 @@ public class BintrayMavenExtensionRepositoryFactory extends AbstractExtensionRep
     private HttpClientFactory httpClientFactory;
 
     @Inject
-    private ExtensionFactory factory;
+    private ExtensionFactory extensionFactory;
 
     @Override public void initialize()
     {
@@ -77,10 +76,9 @@ public class BintrayMavenExtensionRepositoryFactory extends AbstractExtensionRep
                     obtainMavenRepositoryDescriptor(extensionRepositoryDescriptor);
             ExtensionRepository aetherExtensionRepository =
                     mavenExtensionRepositoryFactory.createRepository(mavenRepositoryDescriptor);
-            CloseableHttpClient client = httpClientFactory.createClient(null, null);
             return new BintrayMavenExtensionRepository(extensionRepositoryDescriptor,
-                    (AetherExtensionRepository) aetherExtensionRepository,
-                    client, licenseManager, factory);
+                    (AetherExtensionRepository) aetherExtensionRepository, licenseManager, extensionFactory,
+                    httpClientFactory);
         } catch (Exception e) {
             throw new ExtensionRepositoryException(
                     "Failed to create repository [" + extensionRepositoryDescriptor + "]", e);

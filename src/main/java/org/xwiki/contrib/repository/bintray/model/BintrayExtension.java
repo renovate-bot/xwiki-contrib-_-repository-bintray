@@ -22,19 +22,19 @@ package org.xwiki.contrib.repository.bintray.model;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
-import org.eclipse.aether.artifact.DefaultArtifact;
 import org.xwiki.contrib.repository.bintray.BintrayMavenExtensionRepository;
 import org.xwiki.contrib.repository.bintray.BintrayParameters;
 import org.xwiki.contrib.repository.bintray.dto.BintrayPackageDTO;
+import org.xwiki.contrib.repository.bintray.utils.BintrayUtils;
+import org.xwiki.contrib.repository.bintray.utils.MavenId;
 import org.xwiki.extension.AbstractRemoteExtension;
+import org.xwiki.extension.Extension;
 import org.xwiki.extension.ExtensionId;
 import org.xwiki.extension.ExtensionLicense;
 import org.xwiki.extension.ExtensionLicenseManager;
 import org.xwiki.extension.ResolveException;
 import org.xwiki.extension.internal.ExtensionFactory;
-import org.xwiki.extension.repository.aether.internal.AetherExtensionFile;
-import org.xwiki.extension.repository.aether.internal.AetherExtensionRepository;
-import org.xwiki.extension.repository.aether.internal.AetherUtils;
+import org.xwiki.extension.repository.ExtensionRepository;
 
 import com.google.common.collect.ImmutableMap;
 
@@ -53,7 +53,7 @@ public class BintrayExtension extends AbstractRemoteExtension
      * @throws ResolveException -
      */
     public BintrayExtension(BintrayPackageDTO bintrayPackageDTO,
-            BintrayMavenExtensionRepository repository, AetherExtensionRepository aetherExtensionRepository,
+            BintrayMavenExtensionRepository repository, ExtensionRepository aetherExtensionRepository,
             ExtensionLicenseManager licenseManager, ExtensionFactory extensionFactory) throws ResolveException
     {
         super(repository,
@@ -71,13 +71,14 @@ public class BintrayExtension extends AbstractRemoteExtension
         setAetherFileAndProperties(getId(), aetherExtensionRepository);
     }
 
-    private void setAetherFileAndProperties(ExtensionId id, AetherExtensionRepository aetherExtensionRepository)
+    private void setAetherFileAndProperties(ExtensionId id, ExtensionRepository aetherExtensionRepository)
             throws ResolveException
     {
-        DefaultArtifact artifact = AetherUtils.createArtifact(id.getId(), id.getVersion().getValue());
-        setFile(new AetherExtensionFile(artifact, aetherExtensionRepository));
-        setProperties(ImmutableMap.of(BintrayParameters.MAVEN_ARTIFACTID_PROP, artifact.getArtifactId(),
-                BintrayParameters.MAVEN_GROUPID_PROP, artifact.getGroupId()));
+        MavenId mavenId = BintrayUtils.parseMavenId(id);
+        Extension extension = aetherExtensionRepository.resolve(id);
+        setFile(getFile());
+        setProperties(ImmutableMap.of(BintrayParameters.MAVEN_ARTIFACTID_PROP, mavenId.getArtifactId(),
+                BintrayParameters.MAVEN_GROUPID_PROP, mavenId.getGroupId()));
     }
 
     private void addLicenses(List<String> licenses, ExtensionLicenseManager licenseManager)

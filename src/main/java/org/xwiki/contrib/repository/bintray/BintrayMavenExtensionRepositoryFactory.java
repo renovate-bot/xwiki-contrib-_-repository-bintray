@@ -34,7 +34,6 @@ import org.xwiki.extension.repository.ExtensionRepository;
 import org.xwiki.extension.repository.ExtensionRepositoryDescriptor;
 import org.xwiki.extension.repository.ExtensionRepositoryException;
 import org.xwiki.extension.repository.ExtensionRepositoryFactory;
-import org.xwiki.extension.repository.aether.internal.AetherExtensionRepository;
 import org.xwiki.extension.repository.http.internal.HttpClientFactory;
 
 /**
@@ -77,7 +76,7 @@ public class BintrayMavenExtensionRepositoryFactory extends AbstractExtensionRep
             ExtensionRepository aetherExtensionRepository =
                     mavenExtensionRepositoryFactory.createRepository(mavenRepositoryDescriptor);
             return new BintrayMavenExtensionRepository(extensionRepositoryDescriptor,
-                    (AetherExtensionRepository) aetherExtensionRepository, licenseManager, extensionFactory,
+                    aetherExtensionRepository, licenseManager, extensionFactory,
                     httpClientFactory, logger);
         } catch (Exception e) {
             throw new ExtensionRepositoryException(

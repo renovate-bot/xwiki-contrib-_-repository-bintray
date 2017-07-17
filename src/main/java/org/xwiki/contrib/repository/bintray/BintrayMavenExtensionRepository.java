@@ -42,8 +42,8 @@ import org.xwiki.extension.ExtensionLicenseManager;
 import org.xwiki.extension.ResolveException;
 import org.xwiki.extension.internal.ExtensionFactory;
 import org.xwiki.extension.repository.AbstractExtensionRepository;
+import org.xwiki.extension.repository.ExtensionRepository;
 import org.xwiki.extension.repository.ExtensionRepositoryDescriptor;
-import org.xwiki.extension.repository.aether.internal.AetherExtensionRepository;
 import org.xwiki.extension.repository.http.internal.HttpClientFactory;
 import org.xwiki.extension.repository.result.CollectionIterableResult;
 import org.xwiki.extension.repository.result.IterableResult;
@@ -61,7 +61,7 @@ public class BintrayMavenExtensionRepository extends AbstractExtensionRepository
 {
     private static ObjectMapper objectMapper = new ObjectMapper();
 
-    private final AetherExtensionRepository aetherExtensionRepository;
+    private final ExtensionRepository aetherExtensionRepository;
 
 
     private final ExtensionLicenseManager licenseManager;
@@ -87,7 +87,7 @@ public class BintrayMavenExtensionRepository extends AbstractExtensionRepository
      * @param logger -
      */
     public BintrayMavenExtensionRepository(ExtensionRepositoryDescriptor extensionRepositoryDescriptor,
-            AetherExtensionRepository aetherExtensionRepository,
+            ExtensionRepository aetherExtensionRepository,
             ExtensionLicenseManager licenseManager, ExtensionFactory extensionFactory,
             HttpClientFactory httpClientFactory, Logger logger)
     {

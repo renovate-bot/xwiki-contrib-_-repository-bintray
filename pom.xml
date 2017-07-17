@@ -54,6 +54,7 @@
     <xwiki.extension.category>repository</xwiki.extension.category>
     <xwiki.issueManagement.jira.id>BINTRAYREP</xwiki.issueManagement.jira.id>
     <xwiki.release.jira.skip>false</xwiki.release.jira.skip>
+    <xwiki.jacoco.instructionRatio>0.1</xwiki.jacoco.instructionRatio>
   </properties>
 
   <dependencies>

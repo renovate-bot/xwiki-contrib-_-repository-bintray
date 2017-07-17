@@ -22,6 +22,7 @@ package org.xwiki.contrib.repository.bintray.model;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
 import org.xwiki.contrib.repository.bintray.BintrayMavenExtensionRepository;
 import org.xwiki.contrib.repository.bintray.BintrayParameters;
 import org.xwiki.contrib.repository.bintray.dto.BintrayPackageDTO;
@@ -29,6 +30,7 @@ import org.xwiki.contrib.repository.bintray.utils.BintrayUtils;
 import org.xwiki.contrib.repository.bintray.utils.MavenId;
 import org.xwiki.extension.AbstractRemoteExtension;
 import org.xwiki.extension.Extension;
+import org.xwiki.extension.ExtensionFile;
 import org.xwiki.extension.ExtensionId;
 import org.xwiki.extension.ExtensionLicense;
 import org.xwiki.extension.ExtensionLicenseManager;
@@ -44,21 +46,29 @@ import com.google.common.collect.ImmutableMap;
  */
 public class BintrayExtension extends AbstractRemoteExtension
 {
+    private final ExtensionRepository extensionRepository;
+
+    private final Logger logger;
+
     /**
      * @param bintrayPackageDTO -
      * @param repository -
-     * @param aetherExtensionRepository -
+     * @param extensionRepository -
      * @param licenseManager -
      * @param extensionFactory -
+     * @param logger -
      * @throws ResolveException -
      */
     public BintrayExtension(BintrayPackageDTO bintrayPackageDTO,
-            BintrayMavenExtensionRepository repository, ExtensionRepository aetherExtensionRepository,
-            ExtensionLicenseManager licenseManager, ExtensionFactory extensionFactory) throws ResolveException
+            BintrayMavenExtensionRepository repository, ExtensionRepository extensionRepository,
+            ExtensionLicenseManager licenseManager, ExtensionFactory extensionFactory, Logger logger)
+            throws ResolveException
     {
         super(repository,
                 new ExtensionId(bintrayPackageDTO.getSystem_ids().get(0), bintrayPackageDTO.getLatest_version()),
                 "jar");
+        this.logger = logger;
+        this.extensionRepository = extensionRepository;
         setName(bintrayPackageDTO.getName());
         addLicenses(bintrayPackageDTO.getLicenses(), licenseManager);
         setDescription(bintrayPackageDTO.getDesc());
@@ -68,17 +78,29 @@ public class BintrayExtension extends AbstractRemoteExtension
         setIssueManagement(
                 extensionFactory.getExtensionIssueManagement(null, bintrayPackageDTO.getIssue_tracker_url()));
         setRecommended(false);
-        setAetherFileAndProperties(getId(), aetherExtensionRepository);
+        setProperties(getId());
     }
 
-    private void setAetherFileAndProperties(ExtensionId id, ExtensionRepository aetherExtensionRepository)
+    private void setProperties(ExtensionId id)
             throws ResolveException
     {
-        MavenId mavenId = BintrayUtils.parseMavenId(id);
-        Extension extension = aetherExtensionRepository.resolve(id);
-        setFile(getFile());
+        MavenId mavenId = BintrayUtils.parseMavenId(getId());
         setProperties(ImmutableMap.of(BintrayParameters.MAVEN_ARTIFACTID_PROP, mavenId.getArtifactId(),
                 BintrayParameters.MAVEN_GROUPID_PROP, mavenId.getGroupId()));
+    }
+
+    @Override
+    public ExtensionFile getFile()
+    {
+        if (super.getFile() == null) {
+            try {
+                Extension extension = extensionRepository.resolve(getId());
+                setFile(extension.getFile());
+            } catch (ResolveException e) {
+                this.logger.error("Failed to resolve extension of id [" + getId().getId() + "]", e);
+            }
+        }
+        return super.getFile();
     }
 
     private void addLicenses(List<String> licenses, ExtensionLicenseManager licenseManager)

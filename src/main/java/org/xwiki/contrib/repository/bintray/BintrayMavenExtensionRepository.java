@@ -61,7 +61,7 @@ public class BintrayMavenExtensionRepository extends AbstractExtensionRepository
 {
     private static ObjectMapper objectMapper = new ObjectMapper();
 
-    private final ExtensionRepository aetherExtensionRepository;
+    private final ExtensionRepository mavenExtensionRepository;
 
 
     private final ExtensionLicenseManager licenseManager;
@@ -80,19 +80,19 @@ public class BintrayMavenExtensionRepository extends AbstractExtensionRepository
 
     /**
      * @param extensionRepositoryDescriptor -
-     * @param aetherExtensionRepository - previously created aetherExtensionRepository
+     * @param mavenExtensionRepository - previously created mavenExtensionRepository
      * @param licenseManager -
      * @param extensionFactory -
      * @param httpClientFactory -
      * @param logger -
      */
     public BintrayMavenExtensionRepository(ExtensionRepositoryDescriptor extensionRepositoryDescriptor,
-            ExtensionRepository aetherExtensionRepository,
+            ExtensionRepository mavenExtensionRepository,
             ExtensionLicenseManager licenseManager, ExtensionFactory extensionFactory,
             HttpClientFactory httpClientFactory, Logger logger)
     {
         super(extensionRepositoryDescriptor);
-        this.aetherExtensionRepository = aetherExtensionRepository;
+        this.mavenExtensionRepository = mavenExtensionRepository;
         this.licenseManager = licenseManager;
         this.extensionFactory = extensionFactory;
         this.httpClientFactory = httpClientFactory;
@@ -112,19 +112,19 @@ public class BintrayMavenExtensionRepository extends AbstractExtensionRepository
     @Override
     public Extension resolve(ExtensionId extensionId) throws ResolveException
     {
-        return aetherExtensionRepository.resolve(extensionId);
+        return mavenExtensionRepository.resolve(extensionId);
     }
 
     @Override
     public Extension resolve(ExtensionDependency extensionDependency) throws ResolveException
     {
-        return aetherExtensionRepository.resolve(extensionDependency);
+        return mavenExtensionRepository.resolve(extensionDependency);
     }
 
     @Override
     public IterableResult<Version> resolveVersions(String s, int i, int i1) throws ResolveException
     {
-        return aetherExtensionRepository.resolveVersions(s, i, i1);
+        return mavenExtensionRepository.resolveVersions(s, i, i1);
     }
 
     @Override public IterableResult<Extension> search(String pattern, int offset, int limit) throws SearchException
@@ -187,8 +187,8 @@ public class BintrayMavenExtensionRepository extends AbstractExtensionRepository
         ArrayList<Extension> extensions = new ArrayList<>(bintrayPackages.getBintrayPackageDTOs().size());
         for (BintrayPackageDTO bintrayPackageDTO : bintrayPackages.getBintrayPackageDTOs()) {
             try {
-                extensions.add(new BintrayExtension(bintrayPackageDTO, this, aetherExtensionRepository, licenseManager,
-                        extensionFactory));
+                extensions.add(new BintrayExtension(bintrayPackageDTO, this, mavenExtensionRepository, licenseManager,
+                        extensionFactory, logger));
             } catch (Exception e) {
                 logger.warn("Problem with resolving extension: [{}] - [{}]", bintrayPackageDTO.getName(),
                         e.getMessage());

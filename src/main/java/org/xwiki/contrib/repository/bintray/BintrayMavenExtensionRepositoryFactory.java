@@ -73,10 +73,10 @@ public class BintrayMavenExtensionRepositoryFactory extends AbstractExtensionRep
         try {
             ExtensionRepositoryDescriptor mavenRepositoryDescriptor =
                     obtainMavenRepositoryDescriptor(extensionRepositoryDescriptor);
-            ExtensionRepository aetherExtensionRepository =
+            ExtensionRepository mavenExtensionRepository =
                     mavenExtensionRepositoryFactory.createRepository(mavenRepositoryDescriptor);
             return new BintrayMavenExtensionRepository(extensionRepositoryDescriptor,
-                    aetherExtensionRepository, licenseManager, extensionFactory,
+                    mavenExtensionRepository, licenseManager, extensionFactory,
                     httpClientFactory, logger);
         } catch (Exception e) {
             throw new ExtensionRepositoryException(

@@ -1,4 +1,4 @@
-package org.xwiki.contrib.repository.bintray.dto;
+package org.xwiki.contrib.repository.bintray.internal.dto;
 
 import java.io.IOException;
 import java.io.InputStream;

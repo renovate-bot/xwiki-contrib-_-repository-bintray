@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.xwiki.contrib.repository.bintray;
+package org.xwiki.contrib.repository.bintray.internal;
 
 import java.io.IOException;
 import java.net.URI;
@@ -32,9 +32,9 @@ import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.slf4j.Logger;
-import org.xwiki.contrib.repository.bintray.dto.BintrayPackageDTO;
-import org.xwiki.contrib.repository.bintray.dto.BintrayPackages;
-import org.xwiki.contrib.repository.bintray.model.BintrayExtension;
+import org.xwiki.contrib.repository.bintray.internal.dto.BintrayPackageDTO;
+import org.xwiki.contrib.repository.bintray.internal.dto.BintrayPackages;
+import org.xwiki.contrib.repository.bintray.internal.model.BintrayExtension;
 import org.xwiki.extension.Extension;
 import org.xwiki.extension.ExtensionDependency;
 import org.xwiki.extension.ExtensionId;
@@ -159,7 +159,6 @@ public class BintrayMavenExtensionRepository extends AbstractExtensionRepository
             throw new SearchException(String.format("Invalid answer [%s] from the server when requesting [%s]",
                     response.getStatusLine().getStatusCode(), getMethod.getURI()));
         }
-
         BintrayPackages bintrayPackages = null;
         int totalHits = 0;
         try {

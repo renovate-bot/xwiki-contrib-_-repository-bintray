@@ -17,28 +17,28 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.xwiki.contrib.repository.bintray.model;
+package org.xwiki.contrib.repository.bintray.internal.utils;
+
+import org.xwiki.extension.ExtensionId;
+import org.xwiki.extension.ResolveException;
 
 /**
- * @version $Id: 81a55f3a16b33bcf2696d0cac493b25c946b6ee4 $
- * @since 1.0
+ * Created by Krzysztof on 17.07.2017.
  */
-public enum  BintrayRepositoryType
+public class BintrayUtils
 {
-    MAVEN("bintray-maven");
-
-    private String name;
-
-    BintrayRepositoryType(String name)
+    public static MavenId parseMavenId(ExtensionId extensionId) throws ResolveException
     {
-        this.name = name;
+        String id = extensionId.getId();
+        return parseMavenId(id);
     }
 
-    /**
-     * @return
-     */
-    public String getName()
+    public static MavenId parseMavenId(String id) throws ResolveException
     {
-        return name;
+        String[] parts = id.split(":");
+        if (parts.length < 2) {
+            throw new ResolveException("Bad id " + id + ", expected format is <groupId>:<artifactId>[:<classifier>]");
+        }
+        return new MavenId(parts[0], parts[1]);
     }
 }

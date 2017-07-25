@@ -1,4 +1,4 @@
-package org.xwiki.contrib.repository.bintray;
+package org.xwiki.contrib.repository.bintray.internal;
 
 import java.net.URI;
 import java.util.Arrays;

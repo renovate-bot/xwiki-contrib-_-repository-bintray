@@ -17,12 +17,12 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.xwiki.contrib.repository.bintray.model;
+package org.xwiki.contrib.repository.bintray.internal.model;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import org.xwiki.contrib.repository.bintray.BintrayParameters;
+import org.xwiki.contrib.repository.bintray.internal.BintrayParameters;
 import org.xwiki.extension.repository.DefaultExtensionRepositoryDescriptor;
 import org.xwiki.extension.repository.ExtensionRepositoryDescriptor;
 

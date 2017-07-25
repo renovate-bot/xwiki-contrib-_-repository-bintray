@@ -17,17 +17,17 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.xwiki.contrib.repository.bintray.model;
+package org.xwiki.contrib.repository.bintray.internal.model;
 
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
-import org.xwiki.contrib.repository.bintray.BintrayMavenExtensionRepository;
-import org.xwiki.contrib.repository.bintray.BintrayParameters;
-import org.xwiki.contrib.repository.bintray.dto.BintrayPackageDTO;
-import org.xwiki.contrib.repository.bintray.utils.BintrayUtils;
-import org.xwiki.contrib.repository.bintray.utils.MavenId;
+import org.xwiki.contrib.repository.bintray.internal.BintrayMavenExtensionRepository;
+import org.xwiki.contrib.repository.bintray.internal.BintrayParameters;
+import org.xwiki.contrib.repository.bintray.internal.dto.BintrayPackageDTO;
+import org.xwiki.contrib.repository.bintray.internal.utils.BintrayUtils;
+import org.xwiki.contrib.repository.bintray.internal.utils.MavenId;
 import org.xwiki.extension.AbstractRemoteExtension;
 import org.xwiki.extension.Extension;
 import org.xwiki.extension.ExtensionFile;

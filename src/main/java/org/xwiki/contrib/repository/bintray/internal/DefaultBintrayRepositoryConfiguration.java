@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.xwiki.contrib.repository.bintray;
+package org.xwiki.contrib.repository.bintray.internal;
 
 import java.util.Collections;
 import java.util.List;
@@ -31,8 +31,8 @@ import javax.inject.Singleton;
 import org.slf4j.Logger;
 import org.xwiki.component.annotation.Component;
 import org.xwiki.configuration.ConfigurationSource;
-import org.xwiki.contrib.repository.bintray.model.BintrayRepositoryDescriptor;
-import org.xwiki.contrib.repository.bintray.model.BintrayRepositoryType;
+import org.xwiki.contrib.repository.bintray.internal.model.BintrayRepositoryDescriptor;
+import org.xwiki.contrib.repository.bintray.internal.model.BintrayRepositoryType;
 
 import com.google.common.collect.ImmutableList;
 

@@ -17,28 +17,25 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.xwiki.contrib.repository.bintray;
+package org.xwiki.contrib.repository.bintray.internal;
 
 import java.net.URISyntaxException;
 import java.util.Collections;
-import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
 import org.slf4j.Logger;
-import org.xwiki.component.phase.Initializable;
 import org.xwiki.component.annotation.Component;
-import org.xwiki.contrib.repository.bintray.model.BintrayRepositoryDescriptor;
+import org.xwiki.component.phase.Initializable;
+import org.xwiki.contrib.repository.bintray.internal.model.BintrayRepositoryDescriptor;
 import org.xwiki.extension.repository.ExtensionRepository;
 import org.xwiki.extension.repository.ExtensionRepositoryException;
 import org.xwiki.extension.repository.ExtensionRepositoryFactory;
 import org.xwiki.extension.repository.ExtensionRepositoryManager;
 import org.xwiki.observation.AbstractEventListener;
 import org.xwiki.observation.event.Event;
-
-import static org.xwiki.contrib.repository.bintray.model.BintrayRepositoryType.MAVEN;
 
 /**
  * This listener is only for execution configuration logic on installment.

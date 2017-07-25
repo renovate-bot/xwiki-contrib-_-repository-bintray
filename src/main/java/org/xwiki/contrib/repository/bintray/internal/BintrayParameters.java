@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.xwiki.contrib.repository.bintray;
+package org.xwiki.contrib.repository.bintray.internal;
 
 /**
  * @version $Id: 81a55f3a16b33bcf2696d0cac493b25c946b6ee4 $

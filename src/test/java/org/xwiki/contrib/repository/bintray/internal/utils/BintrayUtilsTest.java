@@ -1,4 +1,4 @@
-package org.xwiki.contrib.repository.bintray.utils;
+package org.xwiki.contrib.repository.bintray.internal.utils;
 
 import org.junit.Test;
 
